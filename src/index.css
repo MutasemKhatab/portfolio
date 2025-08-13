@@ -4,126 +4,72 @@
 @import "tailwindcss";
 
 @layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: "JetBrains Mono", sans-serif;
     cursor: default;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    color: #f1f5f9;
+    min-height: 100vh;
+  }
+
+  html {
+    scroll-padding-top: 100px; /* Account for fixed navbar */
   }
 }
 
-/* Skills Component Animations */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-}
-
-.pulse-animation {
-  animation: pulse 2s infinite ease-in-out;
-}
-
-.tree-trunk {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-}
-
-.tree-trunk.animate {
-  animation: drawLine 3s ease-in-out forwards;
-}
-
-@keyframes drawLine {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
+/* Enhanced floating animation for tech icons */
 @keyframes float {
   0% {
-    transform: translateY(0) translateX(0) rotate(0);
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) translateX(4px) rotate(1deg);
   }
   50% {
-    transform: translateY(-10px) translateX(5px) rotate(5deg);
+    transform: translateY(-4px) translateX(-2px) rotate(-0.5deg);
+  }
+  75% {
+    transform: translateY(4px) translateX(-4px) rotate(-1deg);
   }
   100% {
-    transform: translateY(5px) translateX(-5px) rotate(-5deg);
+    transform: translateY(0) translateX(0) rotate(0deg);
   }
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(-5deg);
+/* Glow animation for special elements */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(100, 116, 139, 0.4);
   }
-  to {
-    transform: rotate(5deg);
+  50% {
+    box-shadow: 0 0 30px rgba(100, 116, 139, 0.6);
   }
 }
 
-.frontend-branch {
-  opacity: 0;
-  transform: translateX(-50px);
+.glow-animation {
+  animation: glow 3s ease-in-out infinite;
 }
 
-.frontend-branch.animate {
-  animation: slideInLeft 1s ease-out 1s both;
-}
-
-.backend-branch {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.backend-branch.animate {
-  animation: slideInUp 1s ease-out 1.5s both;
-}
-
-.devops-branch {
-  opacity: 0;
-  transform: translateX(50px);
-}
-
-.devops-branch.animate {
-  animation: slideInRight 1s ease-out 2s both;
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translateX(-50px);
-    opacity: 0;
+/* Enhanced pulse animation */
+@keyframes enhanced-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
   }
-  to {
-    transform: translateX(0);
+  50% {
+    transform: scale(1.1);
     opacity: 1;
   }
 }
 
-@keyframes slideInUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+.enhanced-pulse {
+  animation: enhanced-pulse 2s ease-in-out infinite;
 }
 
 /* Education Component Flip Card Styles */
@@ -174,20 +120,59 @@
   transition: transform 0.3s ease;
 }
 
-/* Gradient text animation */
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.bg-clip-text {
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Smooth transitions for all interactive elements */
+a,
+button,
+.cursor-pointer {
+  transition: all 0.3s ease;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Enhanced gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #64748b, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Backdrop blur utilities */
+.backdrop-blur-custom {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Enhanced border gradients */
+.border-gradient {
+  border: 1px solid transparent;
+  background: linear-gradient(
+      135deg,
+      rgba(100, 116, 139, 0.3),
+      rgba(148, 163, 184, 0.1)
+    )
+    border-box;
+  border-radius: 12px;
 }

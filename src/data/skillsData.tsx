@@ -50,7 +50,7 @@ export const frontendIcons: TechIconData[] = [
     size: "md",
   },
   {
-    icon: <SiNextdotjs className="w-full h-full text-black dark:text-white" />,
+    icon: <SiNextdotjs className="w-full h-full text-slate-100" />,
     label: "Next.js",
     size: "md",
   },
