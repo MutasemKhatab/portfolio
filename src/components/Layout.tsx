@@ -10,7 +10,7 @@ export default function Layout({ title, body, rightDiv }: LayoutProps) {
     <div className="m-20 grid grid-cols-3 justify-between items-center gap-30">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         className="md:col-span-1"
       >

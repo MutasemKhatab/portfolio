@@ -7,9 +7,9 @@ export default function Nav() {
         Khattab
       </div>
       <div>
-        <a href="#work"> Work</a>
+        <a href="#education"> Education</a>
         <a href="#about"> About</a>
-        <a href="#work"> Contact</a>
+        <a href="#contact"> Contact</a>
       </div>
     </div>
   );
