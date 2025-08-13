@@ -144,9 +144,9 @@ export default function Intro() {
   };
 
   return (
-    <section className="pt-50 pb-24 px-6 relative">
+    <section className="pt-32 sm:pt-40 lg:pt-50 pb-16 sm:pb-24 px-4 sm:px-6 relative">
       {/* Vim-inspired background elements */}
-      <div className="absolute top-40 left-10 text-slate-700/30 font-mono text-sm">
+      <div className="hidden sm:block absolute top-32 sm:top-40 left-4 sm:left-10 text-slate-700/30 font-mono text-xs sm:text-sm">
         <div>1 | Introduction</div>
         <div>2 | Software Engineer</div>
         <div>3 | Building with purpose</div>
@@ -154,19 +154,19 @@ export default function Intro() {
         <div className="text-green-500/40">~</div>
       </div>
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="space-y-6 relative"
+          className="space-y-4 sm:space-y-6 relative order-2 lg:order-1"
         >
           {/* Vim command line inspiration */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="font-mono text-green-400/60 text-sm mb-4 h-6"
+            className="font-mono text-green-400/60 text-xs sm:text-sm mb-4 h-6"
           >
             {commandText}
             {currentPhase === "command" && (
@@ -175,23 +175,23 @@ export default function Intro() {
           </motion.div>
 
           <div className="relative">
-            <h1 className="text-6xl font-bold text-slate-100 leading-tight relative">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-100 leading-tight relative">
               {titleText}
               {currentPhase === "title" && (
-                <span className="inline-block w-3 h-16 bg-green-400/80 ml-1 align-bottom"></span>
+                <span className="inline-block w-2 sm:w-3 h-10 sm:h-12 lg:h-16 bg-green-400/80 ml-1 align-bottom"></span>
               )}
             </h1>
           </div>
 
           <div className="relative">
-            <p className="text-xl text-slate-300 leading-relaxed relative min-h-[4rem]">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed relative min-h-[3rem] sm:min-h-[4rem]">
               {renderTextWithSelection(bodyText, selectedText)}
               {currentPhase === "body" && (
-                <span className="inline-block w-2 h-6 bg-green-400/80 ml-1 align-text-bottom"></span>
+                <span className="inline-block w-2 h-5 sm:h-6 bg-green-400/80 ml-1 align-text-bottom"></span>
               )}
               {currentPhase === "complete" && (
                 <span
-                  className={`inline-block w-2 h-6 ml-1 align-text-bottom ${
+                  className={`inline-block w-2 h-5 sm:h-6 ml-1 align-text-bottom ${
                     showCursor ? "bg-green-400/80" : "bg-transparent"
                   }`}
                 ></span>
@@ -204,7 +204,7 @@ export default function Intro() {
             initial={{ opacity: 0 }}
             animate={{ opacity: currentPhase !== "command" ? 1 : 0 }}
             transition={{ delay: 1 }}
-            className="bg-slate-800/50 border border-slate-700/50 rounded px-4 py-2 font-mono text-sm text-slate-400 mt-6"
+            className="bg-slate-800/50 border border-slate-700/50 rounded px-3 sm:px-4 py-2 font-mono text-xs sm:text-sm text-slate-400 mt-4 sm:mt-6"
           >
             <span
               className={`${
@@ -219,14 +219,14 @@ export default function Intro() {
             >
               -- {vimMode} --
             </span>
-            <span className="ml-4">
+            <span className="ml-2 sm:ml-4">
               Line{" "}
               {currentPhase === "body" || currentPhase === "complete" ? 2 : 1},
               Col {currentPhase === "body" ? bodyText.length : titleText.length}
             </span>
-            <span className="ml-4 text-blue-400">portfolio.jsx</span>
+            <span className="ml-2 sm:ml-4 text-blue-400">portfolio.jsx</span>
             {vimMode === "COMMAND" && (
-              <span className="ml-4 text-green-400">:w saved</span>
+              <span className="ml-2 sm:ml-4 text-green-400">:w saved</span>
             )}
           </motion.div>
         </motion.div>
@@ -240,24 +240,24 @@ export default function Intro() {
             ease: [0.25, 0.46, 0.45, 0.94],
             delay: 0.5,
           }}
-          className="flex justify-center md:justify-end"
+          className="flex justify-center lg:justify-end order-1 lg:order-2"
         >
-          <div className="relative">
+          <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-none">
             {/* Vim-inspired window frame */}
-            <div className="absolute -top-8 left-0 right-0 bg-slate-800 border border-slate-700 rounded-t-lg px-4 py-2 font-mono text-xs text-slate-400">
+            <div className="absolute -top-6 sm:-top-8 left-0 right-0 bg-slate-800 border border-slate-700 rounded-t-lg px-3 sm:px-4 py-2 font-mono text-xs text-slate-400">
               <span className="text-green-400">●</span> profile_pic.png
             </div>
 
             <div className="absolute inset-0 bg-slate-600/20 rounded-2xl blur-2xl"></div>
-            <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-6 overflow-hidden">
+            <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 sm:p-6 overflow-hidden">
               <img
                 src={profile_pic}
                 alt="Mo Khattab"
-                className="w-80 h-96 object-cover object-center rounded-lg"
+                className="w-64 h-80 sm:w-72 sm:h-90 lg:w-80 lg:h-96 object-cover object-center rounded-lg mx-auto"
               />
 
               {/* Vim line numbers overlay */}
-              <div className="absolute left-2 top-6 font-mono text-xs text-slate-600 space-y-4">
+              <div className="absolute left-2 top-4 sm:top-6 font-mono text-xs text-slate-600 space-y-3 sm:space-y-4">
                 <div>1</div>
                 <div>2</div>
                 <div>3</div>

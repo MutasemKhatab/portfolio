@@ -17,7 +17,13 @@
   }
 
   html {
-    scroll-padding-top: 100px; /* Account for fixed navbar */
+    scroll-padding-top: 80px; /* Account for fixed navbar on mobile */
+  }
+
+  @media (min-width: 640px) {
+    html {
+      scroll-padding-top: 100px; /* Larger padding for desktop */
+    }
   }
 }
 

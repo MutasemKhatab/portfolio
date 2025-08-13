@@ -8,9 +8,9 @@ export const TechImage = ({
   style = {},
 }: TechImageProps) => {
   const sizeClasses = {
-    sm: "w-8 h-8",
-    md: "w-12 h-12",
-    lg: "w-16 h-16",
+    sm: "w-6 h-6 sm:w-8 sm:h-8",
+    md: "w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12",
+    lg: "w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16",
   };
 
   return (

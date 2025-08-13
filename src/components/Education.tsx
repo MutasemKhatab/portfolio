@@ -9,7 +9,7 @@ export default function Education() {
   return (
     <Section id="education" title="Education">
       {/* Vim command line */}
-      <div className="font-mono text-green-400/60 text-sm mb-8 text-center">
+      <div className="font-mono text-green-400/60 text-xs sm:text-sm mb-6 sm:mb-8 text-center">
         :buffers | :ls education/*.md
       </div>
 
@@ -18,7 +18,7 @@ export default function Education() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={staggerContainer}
-        className="grid md:grid-cols-2 gap-12 items-center justify-center"
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center justify-center"
       >
         {/* JUST Card */}
         <motion.div variants={fadeInUp} transition={{ delay: 0.2 }}>
@@ -66,11 +66,11 @@ export default function Education() {
       </motion.div>
 
       {/* Vim status bar */}
-      <div className="bg-slate-800/50 border border-slate-700/50 rounded px-4 py-2 font-mono text-sm text-slate-400 mt-12 max-w-4xl mx-auto">
+      <div className="bg-slate-800/50 border border-slate-700/50 rounded px-3 sm:px-4 py-2 font-mono text-xs sm:text-sm text-slate-400 mt-8 sm:mt-12 max-w-4xl mx-auto">
         <span className="text-blue-400">2 buffers</span>
-        <span className="ml-4">JUST: completed</span>
-        <span className="ml-4">42: in progress</span>
-        <span className="ml-4 text-green-400">:w education</span>
+        <span className="ml-2 sm:ml-4">JUST: completed</span>
+        <span className="ml-2 sm:ml-4">42: in progress</span>
+        <span className="ml-2 sm:ml-4 text-green-400">:w education</span>
       </div>
     </Section>
   );

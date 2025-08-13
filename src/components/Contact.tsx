@@ -31,13 +31,13 @@ export default function Contact() {
 
   return (
     <Section id="contact" title="Get In Touch">
-      <div className="text-center mb-12">
+      <div className="text-center mb-8 sm:mb-12">
         {/* Vim command line */}
-        <div className="font-mono text-green-400/60 text-sm mb-6">
+        <div className="font-mono text-green-400/60 text-xs sm:text-sm mb-4 sm:mb-6">
           :contact --social --professional | :set autoread
         </div>
 
-        <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
           I'm always open to discussing new opportunities, collaborations, or
           just having a chat about technology.
         </p>
@@ -47,7 +47,7 @@ export default function Contact() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
-        className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto"
       >
         {contactMethods.map((method, index) => (
           <motion.a
@@ -61,18 +61,18 @@ export default function Contact() {
           >
             <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-xl overflow-hidden hover:bg-slate-700/50 hover:scale-105 transition-all duration-300 hover:shadow-xl">
               {/* Vim tab header */}
-              <div className="bg-slate-900/80 border-b border-slate-700/50 px-4 py-2 font-mono text-xs text-slate-400">
+              <div className="bg-slate-900/80 border-b border-slate-700/50 px-3 sm:px-4 py-2 font-mono text-xs text-slate-400">
                 <span className="text-green-400">●</span> {method.vimCommand}
               </div>
 
-              <div className="p-8 text-center">
+              <div className="p-6 sm:p-8 text-center">
                 <div className="text-slate-400 group-hover:text-slate-200 transition-colors duration-300 mb-4 flex justify-center">
                   {method.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-2">
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-100 mb-2">
                   {method.label}
                 </h3>
-                <p className="text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
+                <p className="text-sm sm:text-base text-slate-400 group-hover:text-slate-300 transition-colors duration-300">
                   {method.description}
                 </p>
               </div>
@@ -82,10 +82,10 @@ export default function Contact() {
       </motion.div>
 
       {/* Vim status bar */}
-      <div className="bg-slate-800/50 border border-slate-700/50 rounded px-4 py-2 font-mono text-sm text-slate-400 mt-8 max-w-4xl mx-auto">
+      <div className="bg-slate-800/50 border border-slate-700/50 rounded px-3 sm:px-4 py-2 font-mono text-xs sm:text-sm text-slate-400 mt-6 sm:mt-8 max-w-4xl mx-auto">
         <span className="text-green-400">-- NORMAL --</span>
-        <span className="ml-4">3 contacts available</span>
-        <span className="ml-4 text-blue-400">ready for connection</span>
+        <span className="ml-2 sm:ml-4">3 contacts available</span>
+        <span className="ml-2 sm:ml-4 text-blue-400">ready for connection</span>
       </div>
     </Section>
   );

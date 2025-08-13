@@ -5,13 +5,13 @@ export default function About() {
     <Section id="about" title="About Me">
       <div className="text-center relative">
         {/* Vim command inspiration */}
-        <div className="font-mono text-green-400/60 text-sm mb-6 text-left max-w-4xl mx-auto">
+        <div className="font-mono text-green-400/60 text-xs sm:text-sm mb-4 sm:mb-6 text-left max-w-4xl mx-auto">
           :read about.md
         </div>
 
         {/* Vim-style content with line numbers */}
         <div className="relative max-w-4xl mx-auto">
-          <div className="absolute left-0 top-0 font-mono text-xs text-slate-600 space-y-6 mt-1">
+          <div className="absolute left-0 top-0 font-mono text-xs text-slate-600 space-y-4 sm:space-y-6 mt-1">
             <div>01</div>
             <div>02</div>
             <div>03</div>
@@ -19,8 +19,8 @@ export default function About() {
             <div>05</div>
           </div>
 
-          <div className="ml-12 text-left">
-            <p className="text-xl text-slate-300 leading-relaxed">
+          <div className="ml-8 sm:ml-12 text-left">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 leading-relaxed">
               Software Engineering graduate from Jordan University of Science
               and Technology, quick to master new technologies and concepts.
               Skilled in software design patterns and passionate about clean,
@@ -32,10 +32,10 @@ export default function About() {
         </div>
 
         {/* Vim status line */}
-        <div className="bg-slate-800/50 border border-slate-700/50 rounded px-4 py-2 font-mono text-sm text-slate-400 mt-8 max-w-4xl mx-auto">
+        <div className="bg-slate-800/50 border border-slate-700/50 rounded px-3 sm:px-4 py-2 font-mono text-xs sm:text-sm text-slate-400 mt-6 sm:mt-8 max-w-4xl mx-auto">
           <span className="text-blue-400">"about.md"</span>
-          <span className="ml-4">5L, 387C</span>
-          <span className="ml-4 text-green-400">written</span>
+          <span className="ml-2 sm:ml-4">5L, 387C</span>
+          <span className="ml-2 sm:ml-4 text-green-400">written</span>
         </div>
       </div>
     </Section>
